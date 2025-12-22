@@ -1,0 +1,57 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "python",
+	"dockerComposeFile": "compose.yaml",
+	"service": "python",
+	"features": {
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.11"
+		}
+	},
+	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"files.eol": "\n",
+				"terminal.integrated.shellIntegration.enabled": false,
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+							"path": "bash",
+							"icon": "terminal-bash"
+					},
+					"zsh": {
+							"path": "zsh",
+							"args": []
+					}
+				}
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.flake8",
+				"ms-python.autopep8",
+				"ms-python.black-formatter",
+				"ms-python.isort",
+				"ms-python.pylance",
+				"ms-toolsai.jupyter",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"github.copilot",
+				"github.copilot-chat",
+				"yzhang.markdown-all-in-one",
+				"davidanson.vscode-markdownlint",
+				"eamodio.gitlens",
+				"ms-azuretools.vscode-docker",
+				"streetsidesoftware.code-spell-checker",
+				"christian-kohler.path-intellisense",
+				"rangav.vscode-thunder-client"
+			]
+		}
+	},
+	
+	"remoteUser": "vscode",
+	"containerUser": "vscode",
+	"workspaceFolder": "/home/vscode/${SERVICE_NAME}",
+	"shutdownAction": "stopCompose"
+}
