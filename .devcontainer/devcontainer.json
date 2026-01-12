@@ -7,9 +7,11 @@
 	"features": {
 		"ghcr.io/devcontainers/features/python:1": {
 			"version": "3.11"
-		}
+		},
+		"ghcr.io/devcontainers/features/node:1": {}
 	},
 	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"postCreateCommand": "npm install -g @google/gemini-cli",
 	"customizations": {
 		"vscode": {
 			"settings": {
@@ -35,8 +37,6 @@
 				"ms-python.isort",
 				"ms-python.pylance",
 				"ms-toolsai.jupyter",
-				"VisualStudioExptTeam.vscodeintellicode",
-				"VisualStudioExptTeam.intellicode-api-usage-examples",
 				"github.copilot",
 				"github.copilot-chat",
 				"yzhang.markdown-all-in-one",
@@ -52,6 +52,6 @@
 	
 	"remoteUser": "vscode",
 	"containerUser": "vscode",
-	"workspaceFolder": "/home/vscode/${SERVICE_NAME}",
+	"workspaceFolder": "/home/vscode/python",
 	"shutdownAction": "stopCompose"
 }

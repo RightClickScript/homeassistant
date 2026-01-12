@@ -10,7 +10,7 @@ services:
     container_name: python
     hostname: python
     working_dir: /home/${USER_NAME}/python
-    command: /bin/sh -c "while sleep 1000; do :; done"
+    command: /bin/bash -lc "while sleep 1000; do :; done"
     volumes:
       - type: bind
         source: ..
